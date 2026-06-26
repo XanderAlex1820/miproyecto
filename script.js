@@ -1,13 +1,4 @@
-/* ══════════════════════════════════════════════════════════════
-   script.js  —  Para ti...
-   • Estrellas animadas (canvas)
-   • Carrusel de recuerdos
-   • Botón de corazón en carta
-   • Reproductor de música completo
-   • Scroll-reveal suave
-══════════════════════════════════════════════════════════════ */
-
-/* ─── 1. CANVAS DE ESTRELLAS ─────────────────────────────────── */
+/* 1.CANVAS DE ESTRELLAS */
 (function initStars() {
   const canvas = document.getElementById('stars');
   const ctx    = canvas.getContext('2d');
@@ -96,13 +87,12 @@
 
   window.addEventListener('resize', () => { resize(); createStars(160); });
 
-  // Meteoros cada ~5 s
   setInterval(spawnMeteor, 4800);
   setTimeout(spawnMeteor, 600);
 })();
 
 
-/* ─── 2. CARRUSEL DE RECUERDOS ──────────────────────────────── */
+/*2.CARRUSEL DE RECUERDOS*/
 (function initCarousel() {
   const track   = document.getElementById('memoriesTrack');
   const dotsEl  = document.getElementById('memDots');
@@ -115,7 +105,7 @@
   const total   = cards.length;
   let current   = 0;
 
-  // Cuántas tarjetas visibles según viewport
+  //tarjetas visibles 
   function visibleCount() {
     if (window.innerWidth <= 600) return 1;
     if (window.innerWidth <= 900) return 2;
@@ -168,7 +158,7 @@
 })();
 
 
-/* ─── 3. BOTÓN CORAZÓN EN CARTA ─────────────────────────────── */
+/*3.BOTÓN CORAZÓN EN CARTA*/
 (function initLetterHeart() {
   const btn = document.getElementById('letterHeart');
   if (!btn) return;
@@ -179,7 +169,7 @@
 })();
 
 
-/* ─── 4. REPRODUCTOR DE MÚSICA ──────────────────────────────── */
+/*4.REPRODUCTOR DE MUSICA*/
 (function initPlayer() {
   const audio     = document.getElementById('audioPlayer');
   const btnPlay   = document.getElementById('btnPlay');
@@ -200,7 +190,7 @@
   let isRepeat  = false;
   let isShuffle = false;
 
-  /* ── Utilidad: formatear tiempo ── */
+  /*formatear tiempo  */
   function fmt(sec) {
     if (!sec || isNaN(sec)) return '0:00';
     const m = Math.floor(sec / 60);
@@ -208,10 +198,9 @@
     return `${m}:${s}`;
   }
 
-  /* ── Play / Pause ── */
+  /* Play/ Pause*/
   function togglePlay() {
     if (audio.readyState === 0) {
-      // Sin archivo cargado — animamos el botón igual
       showNoFileMsg();
       return;
     }
@@ -223,7 +212,6 @@
   }
 
   function showNoFileMsg() {
-    // Feedback visual suave si no hay archivo
     btnPlay.style.background = '#6b3fa0';
     setTimeout(() => { btnPlay.style.background = ''; }, 800);
   }
@@ -237,7 +225,7 @@
     else { isPlaying = false; btnPlay.textContent = '▶'; progressFill.style.width = '0%'; }
   });
 
-  /* ── Progreso ── */
+  /* Progreso */
   audio.addEventListener('timeupdate', () => {
     if (!audio.duration) return;
     const pct = (audio.currentTime / audio.duration) * 100;
@@ -250,7 +238,7 @@
     timeTotal.textContent = fmt(audio.duration);
   });
 
-  // Click en la barra de progreso → seek
+  // Click en la barra de progreso - seek
   if (progressBg) {
     progressBg.addEventListener('click', e => {
       if (!audio.duration) return;
@@ -260,7 +248,7 @@
     });
   }
 
-  /* ── Volumen ── */
+  /* Volumen*/
   if (volSlider) {
     audio.volume = parseFloat(volSlider.value);
     volSlider.addEventListener('input', () => {
@@ -268,7 +256,7 @@
     });
   }
 
-  /* ── Repeat ── */
+  /*Repeat */
   if (btnRepeat) {
     btnRepeat.addEventListener('click', () => {
       isRepeat = !isRepeat;
@@ -284,11 +272,11 @@
     });
   }
 
-  /* ── Anterior / Siguiente (reinicia la misma pista por ahora) ── */
+  /*  Anterior / Siguiente */
   if (btnPrev) btnPrev.addEventListener('click', () => { audio.currentTime = 0; });
   if (btnNext) btnNext.addEventListener('click', () => { audio.currentTime = 0; audio.pause(); btnPlay.textContent = '▶'; isPlaying = false; });
 
-  /* ── Favorito en la barra ── */
+  /*  Favorito en la barra  */
   if (musicFav) {
     musicFav.addEventListener('click', () => {
       musicFav.classList.toggle('liked');
@@ -296,7 +284,7 @@
     });
   }
 
-  /* ── Barra de progreso responsive en móvil ── */
+  /* Barra de progreso responsive en móvil*/
   // Inyectar fila de progreso para móvil
   const bar = document.getElementById('musicBar');
   if (bar && window.innerWidth <= 600) {
@@ -332,7 +320,7 @@
 })();
 
 
-/* ─── 5. SCROLL REVEAL ──────────────────────────────────────── */
+/* 5. SCROLL REVEAL */
 (function initReveal() {
   const targets = document.querySelectorAll(
     '.thanks-item, .mem-card, .letter-box, .farewell-content'
@@ -354,7 +342,7 @@
 })();
 
 
-/* ─── 6. DOTS DEL HERO ──────────────────────────────────────── */
+/* 6. DOTS DEL HERO */
 (function initHeroDots() {
   const sections = ['hero', 'recuerdos', 'gracias', 'carta'];
   const dots     = document.querySelectorAll('.hero-dots .dot');
