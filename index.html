@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti...</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!--  CANVAS DE ESTRELLAS -->
+  <canvas id="stars"></canvas>
+
+  <section class="section hero" id="hero">
+    <!-- Imagen de fondo hero — pon tu imagen en assets/images/hero.jpg -->
+    <div class="hero-bg" style="background-image:url('assets/imagenes/fondo.jpg')"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1 class="display-title">Para ti... <span class="heart-icon">♡</span></h1>
+      <p class="hero-sub">Hay cosas que solo existen<br>
+        <span class="accent">detrás de una pantalla.</span>
+      </p>
+      <a href="#recuerdos" class="btn-enter">Entrar &rarr;</a>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-pill">
+        <span>↓</span>
+      </div>
+    </div>
+
+    <!-- Dots de navegación -->
+    <div class="hero-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <section class="section memories" id="recuerdos">
+    <div class="section-inner">
+      <h2 class="section-title">Recuerdos Samperos jaja <span class="heart-icon small">♡</span></h2>
+      <div class="memories-track-wrap">
+        <button class="mem-arrow left" id="memPrev">&#8249;</button>
+        <div class="memories-track" id="memoriesTrack">
+
+          <div class="mem-card">
+            <div class="mem-img" style="background-image:url('assets/imagenes/imagen1.png')">
+              <div class="mem-img-placeholder"><br></div>
+            </div>
+            <div class="mem-icon">♡</div>
+            <p class="mem-label">Siempre<br> tuyo</p>
+          </div>
+
+          <div class="mem-card">
+            <div class="mem-img" style="background-image:url('assets/imagenes/imagen2.png')">
+              <div class="mem-img-placeholder"><br></div>
+            </div>
+            <div class="mem-icon">♡</div>
+            <p class="mem-label">Te<br>adoro</p>
+          </div>
+
+          <div class="mem-card">
+            <div class="mem-img" style="background-image:url('assets/imagenes/imagen3.png')">
+              <div class="mem-img-placeholder"><br></div>
+            </div>
+            <div class="mem-icon">♡</div>
+            <p class="mem-label">Me encantas <br>preciosa</p>
+          </div>
+
+          <div class="mem-card">
+            <div class="mem-img" style="background-image:url('assets/imagenes/imagen4.png')">
+              <div class="mem-img-placeholder"><br></div>
+            </div>
+            <div class="mem-icon">♡</div>
+            <p class="mem-label">Mi bebe<br>hermosa</p>
+          </div>
+
+          <div class="mem-card">
+            <div class="mem-img" style="background-image:url('assets/imagenes/imagen5.png')">
+              <div class="mem-img-placeholder"><br></div>
+            </div>
+            <div class="mem-icon">♡</div>
+            <p class="mem-label">Momentos<br>únicos</p>
+          </div>
+
+        </div>
+        <button class="mem-arrow right" id="memNext">&#8250;</button>
+      </div>
+
+      <!-- Dots del carrusel -->
+      <div class="mem-dots" id="memDots"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 3 — GRACIAS POR... (con imágenes)
+  ═══════════════════════════════════════════ -->
+  <section class="section thanks" id="gracias">
+    <div class="section-inner">
+      <h2 class="section-title accent-title">Gracias por...</h2>
+
+      <!--
+        ┌──────────────────────────────────────────────────┐
+        │  GRID DE "GRACIAS"                               │
+        │  Reemplaza cada .thanks-img con tu imagen:       │
+        │  assets/images/gracias1.jpg … gracias6.jpg       │
+        └──────────────────────────────────────────────────┘
+      -->
+      <div class="thanks-grid">
+
+        <div class="thanks-item">
+          <div class="thanks-img-wrap">
+            <div class="thanks-img" style="background-image:url('assets/imagenes/gracias1.png')">
+              <div class="thanks-placeholder"><br></div>
+            </div>
+          </div>
+          <p>Cada partida<br>juntos</p>
+        </div>
+
+        <div class="thanks-item">
+          <div class="thanks-img-wrap">
+            <div class="thanks-img" style="background-image:url('assets/imagenes/gracias2.png')">
+              <div class="thanks-placeholder"><br></div>
+            </div>
+          </div>
+          <p>Cada minuto<br>esperándote</p>
+        </div>
+
+        <div class="thanks-item">
+          <div class="thanks-img-wrap">
+            <div class="thanks-img" style="background-image:url('assets/imagenes/gracias3.png')">
+              <div class="thanks-placeholder"><br></div>
+            </div>
+          </div>
+          <p>Cada madrugada<br>sin dormir</p>
+        </div>
+
+        <div class="thanks-item">
+          <div class="thanks-img-wrap">
+            <div class="thanks-img" style="background-image:url('assets/imagenes/gracias4.png')">
+              <div class="thanks-placeholder"><br></div>
+            </div>
+          </div>
+          <p>Cada canción<br>que compartimos</p>
+        </div>
+
+        <div class="thanks-item">
+          <div class="thanks-img-wrap">
+            <div class="thanks-img" style="background-image:url('assets/imagenes/gracias5.png')">
+              <div class="thanks-placeholder"><br></div>
+            </div>
+          </div>
+          <p>Cada momento<br>especial</p>
+        </div>
+
+        <div class="thanks-item">
+          <div class="thanks-img-wrap">
+            <div class="thanks-img" style="background-image:url('assets/imagenes/gracias6.png')">
+              <div class="thanks-placeholder"><br></div>
+            </div>
+          </div>
+          <p>Haber estado<br>para mí</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 4 — MI CARTA PARA TI
+  ═══════════════════════════════════════════ -->
+  <section class="section letter" id="carta">
+    <div class="section-inner letter-inner">
+
+      <!-- Imagen lateral de la carta -->
+      <div class="letter-side-img" style="background-image:url('assets/imagenes/cartagatos.png')">
+        <div class="thanks-placeholder" style="font-size:2rem;"><br></div>
+      </div>
+
+      <div class="letter-content">
+        <h2 class="section-title">Mi preciosa<span class="heart-icon small">♡</span></h2>
+        <div class="letter-box">
+          <!--
+            ✏️ EDITA AQUÍ EL TEXTO DE TU CARTA
+          -->
+          <p>A veces sigo pensando que es increíble cómo alguien puede llegar a ser tan importante incluso a la distancia.</p>
+
+<p>Tal vez nunca tengamos algo “normal” como muchas personas, pero cada llamada, cada noche jugando y cada conversación hacen que te vuelvas alguien muy especial para mí.</p>
+
+<p>Me gusta haberte conocido, porque entre tantas personas coincidí contigo y honestamente haces mis días mucho más bonitos.</p>
+
+<p>Gracias por las madrugadas, por las risas, por escucharme y por hacerme sentir acompañado incluso a kilómetros de distancia.</p>
+
+<p>Quizá lo nuestro es diferente, pero para mí cada momento contigo se siente sincero y especial.</p>
+
+<p>Simplemente quería que supieras que me haces feliz y que me alegra muchísimo haberte encontrado en esta vida.</p>
+
+
+<p class="letter-closing">Gracias por haber coincidido conmigo en esta vida.</p>
+
+          <button class="letter-heart-btn" id="letterHeart">♡</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 5 — SIEMPRE TE DESEO LO MEJOR
+  ═══════════════════════════════════════════ -->
+  <section class="section farewell" id="despedida">
+    <!-- Imagen de fondo de despedida -->
+    <div class="hero-bg" style="background-image:url('assets/imagenes/fondo2.jpg')"></div>
+    <div class="hero-overlay dark"></div>
+    <div class="farewell-content">
+      <h2 class="farewell-title">Siempre te deseo<br>lo mejor mi preciosa <span class="heart-icon">♡</span></h2>
+      <p class="farewell-sub">Donde sea que estés,<br>espero que seas feliz.</p>
+      <p class="farewell-sub">TE AMO</p>  
+      <div class="farewell-heart">♡</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BARRA DE MÚSICA (sticky bottom)
+  ═══════════════════════════════════════════ -->
+  <div class="music-bar" id="musicBar">
+
+    <!-- Thumbnail + info -->
+    <div class="music-info">
+      <!--
+        🖼️ Cambia la imagen del álbum: assets/images/album.jpg
+      -->
+      <div class="album-art" style="background-image:url('assets/imagenes/locos.jpg')">
+        <div class="album-placeholder">♪</div>
+      </div>
+      <div class="music-meta">
+        <span class="music-title">Locos</span>
+        <span class="music-artist">Leon Larregui</span>
+      </div>
+      <button class="music-fav" id="musicFav">♡</button>
+    </div>
+
+    <!-- Controles centrales -->
+    <div class="music-controls">
+      <button class="ctrl-btn" id="btnShuffle" title="Aleatorio">⇄</button>
+      <button class="ctrl-btn" id="btnPrev" title="Anterior">⏮</button>
+      <button class="ctrl-btn play-btn" id="btnPlay" title="Play/Pause">▶</button>
+      <button class="ctrl-btn" id="btnNext" title="Siguiente">⏭</button>
+      <button class="ctrl-btn" id="btnRepeat" title="Repetir">↺</button>
+    </div>
+
+    <!-- Progreso + volumen -->
+    <div class="music-right">
+      <div class="progress-wrap">
+        <span class="time" id="timeNow">0:00</span>
+        <div class="progress-bar-bg" id="progressBg">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+        <span class="time" id="timeTotal">0:00</span>
+      </div>
+      <div class="volume-wrap">
+        <span class="vol-icon">🔈</span>
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.7" />
+      </div>
+    </div>
+
+    <!--
+      🎵 AUDIO — pon tu archivo en assets/music/cancion.mp3
+      Puedes agregar más <source> con distintos formatos.
+    -->
+    <audio id="audioPlayer" preload="auto">
+      <source src="assets/music/Locos.mp3" type="audio/mpeg" />
+      <source src="assets/music/Locos.ogg" type="audio/ogg" />
+      Tu navegador no soporta audio HTML5.
+    </audio>
+
+  </div><!-- /music-bar -->
+
+  <script src="script.js"></script>
+</body>
+</html>
